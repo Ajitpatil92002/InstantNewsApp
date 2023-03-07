@@ -7,8 +7,8 @@ const News = ({ category }) => {
   const [News_Data, setNews_Data] = useState([]);
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState(false);
-  const [page, setPage] = useState(0);
-  const [nextPage,setNextPage] = useState(null);
+  const [page, setPage] = useState(null);
+  const [nextPage, setNextPage] = useState(null);
 
   const URL = `https://newsdata.io/api/1/news?apikey=pub_1313412bae4f1565a138983a939197b33f26e&country=in&language=en`;
 
@@ -34,7 +34,7 @@ const News = ({ category }) => {
         }
       }
     };
-    fetchData(URL + `&page=${page !== 0 && page }&category=${category}`);
+    fetchData(URL + `&page=${page && page}&category=${category}`);
   }, [page]);
 
   const handleScroll = () => {
