@@ -34,7 +34,7 @@ const News = ({ category }) => {
         }
       }
     };
-    fetchData(URL + `&page=${page && page}&category=${category}`);
+    fetchData(URL + `&category=${category}`);
   }, [page]);
 
   const handleScroll = () => {
